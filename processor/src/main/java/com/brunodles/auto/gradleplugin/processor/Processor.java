@@ -1,6 +1,6 @@
-package com.brunodles.auto.gradleplugin;
+package com.brunodles.auto.gradleplugin.processor;
 
-import com.brunodles.Plugin;
+import com.brunodles.auto.gradleplugin.Plugin;
 import com.github.brunodles.annotationprocessorhelper.ProcessorBase;
 import com.github.brunodles.annotationprocessorhelper.SupportedAnnotations;
 
@@ -18,7 +18,7 @@ import java.util.Map;
 import java.util.Set;
 
 @SupportedAnnotations(Plugin.class)
-//@com.google.auto.service.AutoService(javax.annotation.processing.Processor.class)
+@com.google.auto.service.AutoService(javax.annotation.processing.Processor.class)
 public class Processor extends ProcessorBase {
 
     private static final String TAG = "Processor";

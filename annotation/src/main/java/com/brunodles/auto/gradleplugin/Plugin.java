@@ -1,4 +1,4 @@
-package com.brunodles;
+package com.brunodles.auto.gradleplugin;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
