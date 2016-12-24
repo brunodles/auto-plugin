@@ -39,7 +39,6 @@ public class Processor extends ProcessorBase {
                 Plugin plugin = element.getAnnotation(Plugin.class);
                 if (plugin == null) continue;
                 String[] value = plugin.value();
-//                log(TAG, String.format("%s - %s", element.asType().toString(), value));
                 objects.put(element.asType(), value);
             }
         }
