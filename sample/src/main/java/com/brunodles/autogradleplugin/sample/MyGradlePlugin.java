@@ -1,7 +1,7 @@
 package com.brunodles.autogradleplugin.sample;
 
-import com.brunodles.auto.gradleplugin.Plugin;
+import com.brunodles.auto.gradleplugin.AutoPlugin;
 
-@Plugin("com.github.brunodles.MyGradlePlugin")
+@AutoPlugin("com.github.brunodles.auto.gradleplugin.MyGradlePlugin")
 public class MyGradlePlugin {
 }

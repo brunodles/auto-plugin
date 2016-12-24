@@ -1,6 +1,6 @@
 package com.brunodles.auto.gradleplugin.processor;
 
-import com.brunodles.auto.gradleplugin.Plugin;
+import com.brunodles.auto.gradleplugin.AutoPlugin;
 import com.github.brunodles.annotationprocessorhelper.ProcessorBase;
 import com.github.brunodles.annotationprocessorhelper.SupportedAnnotations;
 
@@ -17,7 +17,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Set;
 
-@SupportedAnnotations(Plugin.class)
+@SupportedAnnotations(AutoPlugin.class)
 @com.google.auto.service.AutoService(javax.annotation.processing.Processor.class)
 public class Processor extends ProcessorBase {
 
@@ -36,7 +36,7 @@ public class Processor extends ProcessorBase {
         Map<TypeMirror, String[]> objects = new HashMap<javax.lang.model.type.TypeMirror, String[]>();
         for (TypeElement annotation : annotations) {
             for (Element element : roundEnv.getElementsAnnotatedWith(annotation)) {
-                Plugin plugin = element.getAnnotation(Plugin.class);
+                AutoPlugin plugin = element.getAnnotation(AutoPlugin.class);
                 if (plugin == null) continue;
                 String[] value = plugin.value();
                 objects.put(element.asType(), value);
