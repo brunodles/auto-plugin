@@ -1,0 +1,17 @@
+group 'com.brunodles'
+version '1.0'
+
+apply plugin: 'java'
+
+sourceCompatibility = 1.6
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile project(':annotation')
+    compile 'com.github.brunodles:AnnotationProcessorHelper:1.2.0'
+//    compile 'com.google.auto.service:auto-service:+'
+    testCompile group: 'junit', name: 'junit', version: '4.11'
+}
