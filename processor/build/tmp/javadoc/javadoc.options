@@ -1,0 +1,6 @@
+-classpath '/home/bruno/workspace/gradle/AutoGradlePlugin/processor/build/classes/main:/home/bruno/workspace/gradle/AutoGradlePlugin/processor/build/resources/main:/home/bruno/workspace/gradle/AutoGradlePlugin/annotation/build/libs/annotation-1.0.0.jar:/home/bruno/.gradle/caches/modules-2/files-2.1/com.github.brunodles/AnnotationProcessorHelper/1.2.0/e339b5803ad336d65ddf82313ca22e37aa6bcef7/AnnotationProcessorHelper-1.2.0.jar:/home/bruno/.gradle/caches/modules-2/files-2.1/com.google.auto.service/auto-service/1.0-rc2/51033a5b8fcf7039159e35b6878f106ccd5fb35f/auto-service-1.0-rc2.jar:/home/bruno/.gradle/caches/modules-2/files-2.1/com.google.auto/auto-common/0.3/4073ab16ab4aceb9a217273da6442166bf51ae16/auto-common-0.3.jar:/home/bruno/.gradle/caches/modules-2/files-2.1/com.google.guava/guava/18.0/cce0823396aa693798f8882e64213b1772032b09/guava-18.0.jar'
+-d '/home/bruno/workspace/gradle/AutoGradlePlugin/processor/build/docs/javadoc'
+-doctitle 'processor 1.0.0 API'
+-quiet 
+-windowtitle 'processor 1.0.0 API'
+'/home/bruno/workspace/gradle/AutoGradlePlugin/processor/src/main/java/com/brunodles/auto/gradleplugin/processor/Processor.java'

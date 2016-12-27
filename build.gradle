@@ -6,8 +6,6 @@ buildscript {
     }
     dependencies {
         classpath 'com.android.tools.build:gradle:2.0.0'
-        classpath 'com.neenbedankt.gradle.plugins:android-apt:1.8'
-        classpath 'com.github.dcendents:android-maven-gradle-plugin:1.5'
         classpath 'com.jfrog.bintray.gradle:gradle-bintray-plugin:1.7.3'
 
         // NOTE: Do not place your application dependencies here; they belong
@@ -25,3 +23,14 @@ allprojects {
 task clean(type: Delete) {
     delete rootProject.buildDir
 }
+
+ext.maven = [
+        group   : "com.brunodles",
+        version : '1.0.0',
+        repo    : "TempRepo",
+        name    : "AutoPlugin",
+        artifact: "autoplugin",
+        site    : "https://github.com/brunodles/AutoPlugin",
+        git     : "https://github.com/brunodles/AutoPlugin.git",
+        tag     : 'git rev-parse --abbrev-ref HEAD'.execute().text.trim()
+]

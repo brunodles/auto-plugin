@@ -1,9 +1,12 @@
-group 'com.brunodles'
-version '1.0'
-
 apply plugin: 'java'
 
 sourceCompatibility = 1.6
+
+ext.maven_publish = [
+        artifact: "$maven.artifact-processor",
+        name    : "$maven.name Processor"
+]
+apply from: rootProject.file('gradle/publish.gradle')
 
 repositories {
     mavenCentral()

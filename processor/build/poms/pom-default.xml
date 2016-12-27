@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd" xmlns="http://maven.apache.org/POM/4.0.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.brunodles</groupId>
+  <artifactId>autoplugin-processor</artifactId>
+  <version>1.0.0</version>
+  <name>AutoPlugin Processor</name>
+  <url>https://github.com/brunodles/AutoPlugin</url>
+  <scm>
+    <connection>https://github.com/brunodles/AutoPlugin.git</connection>
+    <developerConnection>https://github.com/brunodles/AutoPlugin.git</developerConnection>
+    <url>https://github.com/brunodles/AutoPlugin.git</url>
+  </scm>
+  <dependencies>
+    <dependency>
+      <groupId>com.brunodles</groupId>
+      <artifactId>annotation</artifactId>
+      <version>1.0.0</version>
+      <scope>compile</scope>
+    </dependency>
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>4.11</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>com.github.brunodles</groupId>
+      <artifactId>AnnotationProcessorHelper</artifactId>
+      <version>1.2.0</version>
+      <scope>compile</scope>
+    </dependency>
+  </dependencies>
+</project>
