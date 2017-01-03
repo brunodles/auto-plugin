@@ -1,8 +1,8 @@
 package com.brunodles.auto.gradleplugin.processor;
 
 import com.brunodles.auto.gradleplugin.AutoPlugin;
-import com.github.brunodles.annotationprocessorhelper.ProcessorBase;
-import com.github.brunodles.annotationprocessorhelper.SupportedAnnotations;
+import com.brunodles.annotationprocessorhelper.ProcessorBase;
+import com.brunodles.annotationprocessorhelper.SupportedAnnotations;
 
 import javax.annotation.processing.Filer;
 import javax.annotation.processing.ProcessingEnvironment;
