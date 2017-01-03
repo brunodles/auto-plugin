@@ -1,6 +1,4 @@
-rootProject.name = 'auto-gradle-plugin'
-include 'processor'
-include 'annotation'
+rootProject.name = 'auto-plugin'
+include 'autoplugin-processor'
+include 'autoplugin-annotation'
 include 'sample'
-include 'sample'
-

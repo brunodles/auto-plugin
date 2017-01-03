@@ -1,6 +1,0 @@
--classpath '/home/bruno/workspace/gradle/AutoGradlePlugin/annotation/build/classes/main:/home/bruno/workspace/gradle/AutoGradlePlugin/annotation/build/resources/main'
--d '/home/bruno/workspace/gradle/AutoGradlePlugin/annotation/build/docs/javadoc'
--doctitle 'annotation 1.0.0 API'
--quiet 
--windowtitle 'annotation 1.0.0 API'
-'/home/bruno/workspace/gradle/AutoGradlePlugin/annotation/src/main/java/com/brunodles/auto/gradleplugin/AutoPlugin.java'
