@@ -16,5 +16,9 @@ dependencies {
     compile project(':autoplugin-annotation')
     compile 'com.github.brunodles:AnnotationProcessorHelper:1.2.0'
     compileOnly 'com.google.auto.service:auto-service:+'
-    testCompile group: 'junit', name: 'junit', version: '4.11'
+
+    testCompile 'junit:junit:4.11'
+    testCompile 'com.google.testing.compile:compile-testing:0.6'
+    testCompile 'com.google.truth:truth:0.24'
+
 }
