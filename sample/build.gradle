@@ -1,19 +1,35 @@
+buildscript {
+    repositories {
+        mavenLocal()
+        jcenter()
+        maven { url "https://plugins.gradle.org/m2/" }
+        mavenCentral()
+    }
+    dependencies {
+        classpath "net.ltgt.gradle:gradle-apt-plugin:0.9"
+    }
+}
+
 group 'com.brunodles'
 version '1.0'
 
 apply plugin: 'java'
+apply plugin: "net.ltgt.apt"
 
 sourceCompatibility = 1.5
 
 repositories {
+    mavenLocal()
     mavenCentral()
 }
 
 dependencies {
     // provided or compileOnly
-    compileOnly project(':autoplugin-annotation')
+//    compileOnly project(':autoplugin-annotation')
+    compileOnly "com.brunodles:autoplugin-annotation:$maven.version"
     // use apt, this sample will use compile just to be fast
 //    apt project(':autoplugin-processor')
-    compile project(':autoplugin-processor')
+//    compile project(':autoplugin-processor')
+    apt "com.brunodles:autoplugin-processor:$maven.version"
     testCompile group: 'junit', name: 'junit', version: '4.11'
 }
