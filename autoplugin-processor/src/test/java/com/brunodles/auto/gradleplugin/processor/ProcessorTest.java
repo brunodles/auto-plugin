@@ -33,5 +33,5 @@ public class ProcessorTest {
                 JavaFileObjects.forResource("META-INF/services/SomePlugin3CustomName2.properties")
         );
     }
-    
+
 }

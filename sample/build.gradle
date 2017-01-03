@@ -10,6 +10,7 @@ repositories {
 }
 
 dependencies {
-    compile project(':autoplugin-processor')
+    provided project(':autoplugin-annotation')
+    apt project(':autoplugin-processor')
     testCompile group: 'junit', name: 'junit', version: '4.11'
 }
