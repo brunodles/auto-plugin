@@ -1,0 +1,29 @@
+language: java
+
+jdk:
+  - oraclejdk8
+
+branches:
+  only:
+    - master
+
+env:
+  global:
+    - JAVA7_HOME=/usr/lib/jvm/java-8-oracle
+    - JAVA8_HOME=/usr/lib/jvm/java-8-oracle
+
+before_install:
+  - chmod +x gradlew
+
+script: ./gradlew test
+
+deploy:
+  skip_cleanup: true
+  provider: script
+  script: ./gradlew bintrayUpload
+  on:
+    tags: true
+
+notifications:
+  email: false
+  slack: brunodles:UcI2SRdgkY9He1ZwJ8tXrECD
