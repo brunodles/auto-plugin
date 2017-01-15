@@ -4,8 +4,9 @@ jdk:
   - oraclejdk8
 
 branches:
-  only:
+  except:
     - master
+    - gh-pages
 
 env:
   global:
