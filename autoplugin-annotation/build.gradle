@@ -7,11 +7,3 @@ ext.maven_publish = [
         name    : "$maven.name Annotation"
 ]
 apply from: rootProject.file('gradle/publish.gradle')
-
-repositories {
-    mavenCentral()
-}
-
-dependencies {
-    testCompile group: 'junit', name: 'junit', version: '4.11'
-}
