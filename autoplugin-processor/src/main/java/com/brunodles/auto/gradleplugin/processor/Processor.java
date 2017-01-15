@@ -17,6 +17,8 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Set;
 
+import static com.brunodles.annotationprocessorhelper.FileUtils.writeFile;
+
 @SupportedAnnotations(AutoPlugin.class)
 @com.google.auto.service.AutoService(javax.annotation.processing.Processor.class)
 public class Processor extends ProcessorBase {
