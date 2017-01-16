@@ -1,3 +1,4 @@
+[![Build Status](https://travis-ci.org/brunodles/auto-plugin.svg?branch=release)](https://travis-ci.org/brunodles/auto-plugin)
 # AutoPlugin
 A configuration/metadata generator for gradle plugin.
 
