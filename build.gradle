@@ -26,7 +26,7 @@ task clean(type: Delete) {
 
 ext.maven = [
         group   : "com.brunodles",
-        version : '1.0.1',
+        version : '1.0.2',
         repo    : "TempRepo",
         name    : "AutoPlugin",
         artifact: "autoplugin",
