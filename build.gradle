@@ -29,7 +29,7 @@ ext.scripter = [
 ]
 apply from: rootProject.file("gradle/scripter.gradle")
 
-def gitPath = "github.com/brunodles/AutoPlugin"
+def gitPath = "github.com/brunodles/auto-plugin"
 ext.publishingRoot = [
         group          : "com.brunodles",
         version        : '1.0.2',
@@ -41,7 +41,7 @@ ext.publishingRoot = [
         issueTrackerUrl: "https://$gitPath/issues",
         tag            : 'git rev-parse --abbrev-ref HEAD'.execute().text.trim(),
         override       : true,
-        desc           : "A simple project to grab images from google images search.",
+        desc           : "A configuration/metadata generator for gradle plugin.",
         license        : [
                 short: "mit",
                 name : "MIT License",
