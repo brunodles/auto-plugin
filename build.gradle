@@ -15,7 +15,6 @@ buildscript {
 
 allprojects {
     repositories {
-        maven { url "https://dl.bintray.com/brunodles/TempRepo/" }
         jcenter()
     }
 }
@@ -24,13 +23,32 @@ task clean(type: Delete) {
     delete rootProject.buildDir
 }
 
-ext.maven = [
-        group   : "com.brunodles",
-        version : '1.0.2',
-        repo    : "TempRepo",
-        name    : "AutoPlugin",
-        artifact: "autoplugin",
-        site    : "https://github.com/brunodles/AutoPlugin",
-        git     : "https://github.com/brunodles/AutoPlugin.git",
-        tag     : 'git rev-parse --abbrev-ref HEAD'.execute().text.trim()
+ext.scripter = [
+        'gradle/scripter.gradle': 'https://raw.githubusercontent.com/brunodles/GradleHelpers/master/scripter/scripter.gradle',
+        'gradle/publish.gradle' : 'https://raw.githubusercontent.com/brunodles/GradleHelpers/master/publish/multiple.gradle'
+]
+apply from: rootProject.file("gradle/scripter.gradle")
+
+def gitPath = "github.com/brunodles/AutoPlugin"
+ext.publishingRoot = [
+        group          : "com.brunodles",
+        version        : '1.0.2',
+        repo           : "TempRepo",
+        name           : "AutoPlugin",
+        artifact       : "autoplugin",
+        gitPath        : gitPath,
+        site           : "https://$gitPath",
+        issueTrackerUrl: "https://$gitPath/issues",
+        tag            : 'git rev-parse --abbrev-ref HEAD'.execute().text.trim(),
+        override       : true,
+        desc           : "A simple project to grab images from google images search.",
+        license        : [
+                short: "mit",
+                name : "MIT License",
+                url  : "http://www.opensource.org/licenses/mit-license.php"
+        ],
+        developer      : [
+                name : "Bruno de Lima e Silva",
+                email: "dlimaun@gmail.com"
+        ]
 ]
