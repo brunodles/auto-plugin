@@ -2,8 +2,8 @@ apply plugin: 'java'
 
 sourceCompatibility = 1.6
 
-ext.maven_publish = [
-        artifact: "$maven.artifact-annotation",
-        name    : "$maven.name Annotation"
+ext.publishingModule = [
+        artifact: "$publishingRoot.artifact-annotation",
+        name    : "$publishingRoot.name Annotation"
 ]
 apply from: rootProject.file('gradle/publish.gradle')
