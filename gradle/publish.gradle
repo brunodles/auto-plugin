@@ -1,4 +1,3 @@
-apply plugin: 'maven'
 apply plugin: 'maven-publish'
 apply plugin: 'com.jfrog.bintray'
 
@@ -34,26 +33,7 @@ def pomConfig = {
         }
     }
 }
-// Maven Local
-install {
-    repositories.mavenInstaller {
-        pom.artifactId = publishingModule.artifact
-        pom.project {
-            name publishingModule.name
-            url publishingRoot.site
-            scm {
-                connection "scm:git:git://${publishingRoot.gitPath}.git"
-                developerConnection "scm:git:ssh://${publishingRoot.gitPath}.git"
-                url "http://${publishingRoot.gitPath}"
-            }
-        }
-        pom.withXml {
-            def root = asNode()
-            root.appendNode('description', publishingRoot.desc)
-            root.children().last() + pomConfig
-        }
-    }
-}
+
 // Maven Central
 def scmVcs = {
     scm {
@@ -106,7 +86,6 @@ bintray {
     logger.info("Bintray repo $bintrayRepo")
     if (user == null || key == null) {
         logger.info('Bintray user/apikey not found')
-        throw new GradleException('Bintray user/apikey not found')
     }
     publications = ['mainPublication']
     configurations = ['archives']
