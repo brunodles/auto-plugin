@@ -3,6 +3,7 @@ package com.brunodles.auto.gradleplugin.processor;
 import com.brunodles.auto.gradleplugin.AutoPlugin;
 import com.brunodles.annotationprocessorhelper.ProcessorBase;
 import com.brunodles.annotationprocessorhelper.SupportedAnnotations;
+import com.google.auto.service.AutoService;
 
 import javax.annotation.processing.Filer;
 import javax.annotation.processing.ProcessingEnvironment;
@@ -20,11 +21,11 @@ import java.util.Set;
 import static com.brunodles.annotationprocessorhelper.FileUtils.writeFile;
 
 @SupportedAnnotations(AutoPlugin.class)
-@com.google.auto.service.AutoService(javax.annotation.processing.Processor.class)
+@AutoService(javax.annotation.processing.Processor.class)
 public class Processor extends ProcessorBase {
 
     private static final String TAG = "Processor";
-
+    private static final String[] META_DIRS = {"services", "gradle-plugins"};
     private Filer filer;
 
     @Override
@@ -56,18 +57,19 @@ public class Processor extends ProcessorBase {
     }
 
     private void tryWriteResources(String pluginKey, String implementationClass) {
-        try {
-            writeResources(pluginKey, implementationClass);
-        } catch (IOException e) {
-            e.printStackTrace(System.err);
-            fatalError(TAG, e.getLocalizedMessage());
-        }
+        for (String metaDir : META_DIRS)
+            try {
+                writeResources(metaDir, pluginKey, implementationClass);
+            } catch (IOException e) {
+                e.printStackTrace(System.err);
+                fatalError(TAG, e.getLocalizedMessage());
+            }
     }
 
-    private void writeResources(String pluginKey, String implementationClass) throws IOException {
+    private void writeResources(String metaDir, String pluginKey, String implementationClass) throws IOException {
         log(TAG, String.format("%s - %s", pluginKey, implementationClass));
         if ("".equals(pluginKey)) pluginKey = implementationClass;
-        String filename = "META-INF/services/" + pluginKey + ".properties";
+        String filename = "META-INF/" + metaDir + "/" + pluginKey + ".properties";
         FileObject resource = filer.createResource(StandardLocation.CLASS_OUTPUT, "", filename);
         writeFile(resource, String.format("implementation-class=%s", implementationClass));
     }
