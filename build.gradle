@@ -24,15 +24,14 @@ task clean(type: Delete) {
 }
 
 ext.scripter = [
-        'gradle/scripter.gradle': 'https://raw.githubusercontent.com/brunodles/GradleHelpers/master/scripter/scripter.gradle',
+//        'gradle/scripter.gradle': 'https://raw.githubusercontent.com/brunodles/GradleHelpers/master/scripter/scripter.gradle',
         'gradle/publish.gradle' : 'https://raw.githubusercontent.com/brunodles/GradleHelpers/master/publish/multiple.gradle'
 ]
-apply from: rootProject.file("gradle/scripter.gradle")
 
 def gitPath = "github.com/brunodles/auto-plugin"
 ext.publishingRoot = [
         group          : "com.brunodles",
-        version        : '1.0.2',
+        version        : '1.1.0',
         repo           : "TempRepo",
         name           : "AutoPlugin",
         artifact       : "autoplugin",
@@ -52,3 +51,6 @@ ext.publishingRoot = [
                 email: "dlimaun@gmail.com"
         ]
 ]
+
+if (rootProject.file("gradle/scripter.gradle").exists())
+    apply from: rootProject.file("gradle/scripter.gradle")

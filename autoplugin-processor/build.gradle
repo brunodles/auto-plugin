@@ -17,4 +17,5 @@ ext.publishingModule = [
         artifact: "$publishingRoot.artifact-processor",
         name    : "$publishingRoot.name Processor"
 ]
-apply from: rootProject.file('gradle/publish.gradle')
+if (rootProject.file("gradle/publish.gradle").exists())
+    apply from: rootProject.file("gradle/publish.gradle")

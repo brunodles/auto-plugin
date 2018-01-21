@@ -6,4 +6,5 @@ ext.publishingModule = [
         artifact: "$publishingRoot.artifact-annotation",
         name    : "$publishingRoot.name Annotation"
 ]
-apply from: rootProject.file('gradle/publish.gradle')
+if (rootProject.file("gradle/publish.gradle").exists())
+    apply from: rootProject.file("gradle/publish.gradle")
