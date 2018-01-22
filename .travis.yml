@@ -31,7 +31,7 @@ deploy:
   provider: script
   script: ./gradlew bintrayUpload
   on:
-    branch: master
+    branch: release
 
 notifications:
   email: false
