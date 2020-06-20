@@ -5,7 +5,7 @@ A configuration/metadata generator for gradle plugin.
 ## What is it?
 
 This is a library to help you to create your gradle plugins.
-It will help you generating the plugin configuration, the `META-INF` files.
+It will generate the plugin configuration for annotated plugins, the `META-INF` files.
 
 ## How to use
 
@@ -44,8 +44,8 @@ public class MyPlugin {
 ## Dependency
 
 ```gradle
-provided 'com.brunodles:autoplugin-annotation:1.0.0'
-apt 'com.brunodles:autoplugin-processor:1.0.0'
+compileOnly 'com.brunodles:autoplugin-annotation:1.1.0'
+annotationProcessor 'com.brunodles:autoplugin-processor:1.1.0'
 ```
 
 ## Sources
