@@ -8,6 +8,7 @@ import com.google.auto.service.AutoService;
 import javax.annotation.processing.Filer;
 import javax.annotation.processing.ProcessingEnvironment;
 import javax.annotation.processing.RoundEnvironment;
+import javax.lang.model.SourceVersion;
 import javax.lang.model.element.Element;
 import javax.lang.model.element.TypeElement;
 import javax.lang.model.type.TypeMirror;
@@ -72,5 +73,10 @@ public class Processor extends ProcessorBase {
         String filename = "META-INF/" + metaDir + "/" + pluginKey + ".properties";
         FileObject resource = filer.createResource(StandardLocation.CLASS_OUTPUT, "", filename);
         writeFile(resource, String.format("implementation-class=%s", implementationClass));
+    }
+
+    @Override
+    public SourceVersion getSupportedSourceVersion() {
+        return SourceVersion.RELEASE_8;
     }
 }
