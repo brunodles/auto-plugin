@@ -15,7 +15,8 @@ version '1.0'
 apply plugin: 'java'
 apply plugin: "net.ltgt.apt"
 
-sourceCompatibility = 1.6
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
 
 repositories {
     jcenter()
